@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>TAYUSTECH ENGINEERING</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link your CSS file here -->
+<link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+  
+    <!-- Global Navigation Bar -->
+   <header class="global-header">
+     <nav class="global-navbar">
+       <a href="index.html" class="global-logo">
+         <i class="fa-solid fa-bolt logo-bolt"></i>
+         TAYUS<span>TECH ENGINEERING</span>
+       </a>
+       
+   <!-- LIGHT / DARK MODE BUTTON -->
+<button id="themeToggle" class="theme-toggle">🌙</button>
+
+     </nav>
+   </header>
+ 
+  <!--Main Content -->
+ <main>
+  <div class="hero-card">
+    <div class="icon-wrapper">
+      <i class="fa-solid fa-house-laptop"></i>
+    </div>
+    <h1>Welcome to Tayus<span>Tech</span> Engineering</h1>
+    <p>Use the form below to schedule a repair service with us and get a  premium and performance post repair warranty.<br><b> We give the best to our customers</b></p>
+    <a href="#about" class="learnmore">
+      LEARN MORE <i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
+    </a>
+  </div>
+</main>
+  
+<!-- Direction Link -->
+<nav class="AB">
+  <a href="#repair">⚙ Schedule a Repair</a>
+  <a href="#sell">🔌 Sell your Old appliances</a><br>
+  <a href="#faq">❓Faq</a>
+  <a href="#getintouch">📩 Get In Touch</a>
+  <a href="refrigerator.html" class="office">🏢 Refrigerator HUB</a>
+  <a href="air-conditioner.html" class="office">🏢 AC HUB</a>
+</nav>
+ 
+
+<!-- ===============================
+     REPAIR SERVICE BOOKING
+================================ -->
+<section id="repair" class="section">
+   <h2>Schedule a Repair Service</h2>
+   <p>
+     Our certified engineers fix cooling issues, gas leaks, motor failures, and more.</p>
+     <div class="repair-container">
+    <!-- REPAIR INFORMATION -->
+    <div class="repair-info">
+      <img
+        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+        alt="Technician Repairing Appliance">
+      <ul class="features-list">
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          Same-day doorstep inspection
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          90-day post-repair warranty
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          Original manufacturer spare parts
+        </li>
+      </ul>
+    </div>
+    <!-- BOOKING FORM -->
+    <form class="form-card" id="repairForm">
+      <div class="input-grp">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          required
+          placeholder="Enter Fullname.."
+        >
+      </div>
+      <div class="input-grp">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          required
+          placeholder="+234 801 234 5678"
+        >
+      </div>
+      <div class="input-grp">
+        <label for="service">Service Needed</label>
+        <select id="service" required>
+          <option value="">--Select Service--</option>
+          <option value="AC Gas Refill / Leak Repair">
+            AC Gas Refill / Leak Repair
+          </option>
+          <option value="AC Not Cooling">
+            AC Not Cooling
+          </option>
+          <option value="Fridge Freezing/Cooling Issue">
+            Fridge Freezing/Cooling Issue
+          </option>
+          <option value="Compressor Replacement">
+            Compressor Replacement
+          </option>
+          <option value="General Servicing & Cleaning">
+            General Servicing & Cleaning
+          </option>
+        </select>
+      </div>
+      <div class="input-grp">
+        <label for="date">Preferred Date</label>
+        <input
+          type="date"
+          id="date"
+          required
+        >
+      </div>
+      <div class="input-grp">
+        <label for="address">Address</label>
+        <input
+          id="address"
+          rows="3"
+          required
+          placeholder="Enter service address..."
+        ></input>
+      </div>
+      <button
+        type="submit"
+        class="btn secondary-btn full-btn"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Confirm Service Booking
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- Sell / Trade-in Section -->
+<section id="sell" class="dark-bg">
+<form id="sellForm" class="form-crd" onsubmit="handleEstimate(event)">
+  <h2>Sell Your Old Appliance</h2>
+ <p>Get instant value evaluation for your used AC or Refrigerator.</p>
+<div class="form-group-grid">
+<div class="input-grp">
+  <label>Appliance Type</label>
+  <select id="sellType" required>
+   <option>Select Type</option>
+   <option>Refrigerator</option>
+   <option>Air Conditioner</option>
+  </select> 
+</div>
+<div class="input-grp">
+ <label>Age of Appliance</label>
+ <select id="sellAge" required>
+ <option value="1">Under 1 Year</option>
+ <option value="2">1 - 3 Years</option>
+ <option value="4">4+ Years</option>
+ </select>
+</div>
+<div class="input-grp">
+ <label>Working Condition</label>
+ <select id="sellCondition" required>
+ <option value="excellent">Excellent (Like New)</option>
+ <option value="good">Good (Minor wear)</option>
+ <option value="faulty">Needs Repair / Faulty</option>
+ </select>
+</div>
+</div>
+  <div class="input-grp full-width">
+   <label>Brand & Model Details</label>
+   <input type="text" placeholder="e.g., Samsung French Door 2021 Model" required>
+  </div>
+  <button type="submit" class="btn primary-btn full-btn">Calculate Estimated Valuation</button>
+</form>
+  <div id="estimateResult" class="estimate-box"></div>
+  
+    <!-- Result Display Box -->
+<div id="resultBox" style="display: none;"></div>
+<!-- WhatsApp Submit Button (Hidden until valuation is calculated) -->
+<button id="whatsappBtn" style="display: none; background-color: #25D366; color: white; border: none; padding: 12px 20px; font-weight: bold; border-radius: 8px; width: 100%; margin-top: 10px; cursor: pointer;">
+  Submit Request via WhatsApp
+</button>
+</section>
+
+
+
+      <!-- FAQ SECTION -->
+<section class="faq" id="faq">
+ <div class="faq-content">
+  <p class="small-title">HELP CENTER</p>
+  <h1>Frequently Asked<span>Questions</span></h1>
+  <p class="faq-text">Find answers to the most common questions about our website, services and account.</p>
+ <div class="search-box"><span>🔍</span>
+  <input type="text" id="search" placeholder="Search your question...">
+  </div>
+ </div>
+</section>
+<main class="faq-container">
+<div class="category-buttons">
+<button class="active" onclick="filterCategory('All', this)">
+            All</button>
+ <button onclick="filterCategory('General', this)">General</button>
+ <button onclick="filterCategory('Account', this)">Account</button>
+ <button onclick="filterCategory('Payment', this)">Payment</button>
+  <button onclick="filterCategory('Support', this)">Support</button>
+</div>
+<div id="faqList">
+  
+        <!-- FAQ 1 -->
+<div class="faq-item" data-category="General">
+  <button class="faq-question" onclick="toggleFAQ(this)">
+ <div>
+<small>General</small>
+<h3>What is this website about?</h3>
+</div>
+<span class="icon"> + </span>
+  </button>
+<div class="faq-answer" style="display:none;">
+  <p>This website provides useful information, services, and resources for users in an easy-to-use platform.</p>
+ </div>
+</div>
+
+        <!-- FAQ 2 -->
+<div class="faq-item" data-category="Account">
+ <button class="faq-question" onclick="toggleFAQ(this)">
+  <div>
+  <small>Account</small>
+  <h3>How do I contact your company?</h3>
+  </div>
+  <span class="icon"> + </span>
+ </button>
+ <div class="faq-answer" style="display:none;">
+ <p>You can contact us through our social medias or our provided number  in our platform.</p>
+ </div>
+</div>
+ 
+        <!-- FAQ 3 -->
+<div class="faq-item" data-category="Payment">
+ <button class="faq-question" onclick="toggleFAQ(this)">
+<div>
+<small>Payment</small>
+<h3>What payment methods are accepted for buying, selling or requesting for engineers?</h3>
+</div>
+<span class="icon"> + </span>
+ </button>
+<div class="faq-answer" style="display:none;">
+ <p>Available payment methods depend on the services provided. Supported options will be displayed during checkout.</p>
+</div>
+</div>
+
+        <!-- FAQ 4 -->
+<div class="faq-item" data-category="Support">
+<button class="faq-question" onclick="toggleFAQ(this)">
+<div>
+<small>Support</small>
+<h3>How can I contact support?</h3>
+</div>
+<span class="icon"> + </span>
+</button>
+<div class="faq-answer" style="display:none;">
+<p>You can contact support through the Contact Us page, email, or any other support channel provided on the website.</p>
+</div>
+</div>
+    <!-- NO RESULT -->
+<div id="noResult" class="no-result" style="display:none;">
+<h3>No questions found</h3>
+<p>Try searching for something else.</p>
+</div>
+</main>
+<section class="faq-contact-section">
+<h2>Still have questions?</h2>
+<p>Can't find the answer you're looking for? Contact our support team.</p>
+ <a href="#getintouch"><button class="faq-contact-button" onclick="alert('Contact support')">Contact Support</button></a>
+</section>
+
+
+    <!-- Get In Touch -->
+<div class="contact-container" id="getintouch">
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>Have questions or feedback? We’d love to hear from you. Fill out the form or reach us via details below or toggle the nav menu above.</p>
+    
+    <div class="info-item">
+      <strong>Email:</strong> Tayustechengineering2455@gmail.com
+    </div>
+    <div class="info-item">
+      <strong>Phone:</strong> +234 (080) 6461-0408
+    </div>
+    <div class="info-item">
+  <strong>Social Media:</strong>
+  <a href="http://wa.me/7083085958">
+    <img src="whatsapp.jpeg"></a>
+</div>
+    <div class="info-item">
+      <strong>Address:</strong> <i>12 Ore Ofe Way, Off Olutoroti Street, Ntabo, Ijoko Sango Ota, Ogun State</i>
+    </div>
+  </div>
+  <div class="contact-form-wrapper">
+    <h2>Send Us a Message</h2>
+    
+  <!-- Formspree Endpoint Attached -->
+<form id="contact-form" action="https://formspree.io/f/xbglkzyk" method="POST">
+  
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="John Doe" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+  </div>
+  
+  <button type="submit" id="submit-btn" class="btn">Send Message</button>
+</form>
+  </div>
+</div>
+
+
+<!-- About Section -->
+<section id="about" class="contact-container">
+<div class="contact-info">
+<h2>About TayusTech</h2>
+<p>At<strong> TayusTech company</strong>, We provide services for repairing of refrigerator and Air conditioner for a more refreshing atmosphere and guarantee a long lasting service duration.<br>
+We diagnose and troubleshoot appliances and electronics in order to identify issues such as lack of cooling, unusual noises, short-cycling, or unexpected shutdowns.</p>
+</div>
+<div class="about-image">
+  <img src="tech.png">
+</div>
+</section> 
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content" id="footer">
+    <h3>TAYUS <span>TECH</span></h3>
+    <p>12, Ore Ofe Way, Ntabo, Ijoko, Sango Ota, Ogun State | Phone: +234 (70) 8303-5958</p> 
+    <p>Available Daily for services: 10:00 AM</p>
+    <div class="footer-bottom">
+      <p><b>2026 TAYUS TECH<sup>&COPY;</sup></b> | Quality • Power • Performance<br>All Rights Reserved.</p></p>
+    </div>
+  </div>
+  <p id="datetime"></p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backToTop"> ↑ </button>
+
+<!-- JUMP TO BOTTOM -->
+<button id="scrollToBottomBtn" onclick="scrollToBottom()" title="Go to bottom">
+  <i class="fa-solid fa-arrow-down"></i>
+</button>
+ 
+<script src="script.js"></script>
+</body>
+</html>

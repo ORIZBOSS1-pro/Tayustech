@@ -80,7 +80,7 @@ body {
 /* DARK MODE */
 body.dark-mode {
     --bg-color: #111111;
-    --text-color: black;
+    --text-color: white;
     --card-color: black;
     --border-color: #333333;
 }
@@ -247,15 +247,23 @@ body.dark-mode .theme-toggle {
   color: #00d4ff;
 }
 .AB .office {
-  background: #00d4ff;
+    background:  floralwhite;
+    color: dimgrey;
+    box-shadow: 3px 3px 0 grey;
+  border: 2px solid grey;
+  margin: 10px;
+  padding: 10px 30px;
+}
+.AB .office .fa-solid {
+    color: blue;
 }
 
 
     /* Schedule a Repair */
 .section {
-    background:  white;
     border-radius: 20px;
     margin: 80px 0 0 0;
+    padding: 60px 18px;
 }
 .section h2 {
   text-align: center;
@@ -265,23 +273,23 @@ body.dark-mode .theme-toggle {
 .section p {
   text-align: center;
   color: #64748b;
-  margin-bottom: 30px;
+  font-size: 15px;
 }
 .repair-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   align-items: center;
   padding: 12px;
 }
 .repair-info { 
-    flex: 1; 
-    min-width: 300px; 
+    min-width: 300px;
+    height: 100%;
 }
 .repair-info img { 
     width: 100%; 
     border-radius: 10px; 
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 .features-list { 
     list-style: none;
@@ -295,16 +303,14 @@ body.dark-mode .theme-toggle {
     margin-right: 8px; 
 }
 .form-card {
-  padding: 20px;
   width: 100%;
   border-radius: 10px;
-  background: white;
 }
 .input-grp {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-}
+} 
 .input-grp input:focus {
   border-color: #2563eb;
 }
@@ -324,7 +330,6 @@ body.dark-mode .theme-toggle {
 .input-grp select, #date {
   color: grey;
   height: 40px;
-  background: white;
   border-radius: 6px;
   border: 1px solid #cbd5e1;
 }
@@ -335,6 +340,19 @@ body.dark-mode .theme-toggle {
   font-size: 15px;
 }
 
+@media (orientation: landscape) {
+  .section h2 {
+      margin-top: 6.7rem;
+  }
+  .repair-container {
+      display:  grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .repair-info {
+      
+  }
+}
+
 
 /* Forms (Sell & Repair) */
 .dark-bg {
@@ -342,7 +360,6 @@ body.dark-mode .theme-toggle {
     padding-bottom: 4rem;
 }
 .form-crd {
-  background: white;
   padding: 30px;
   border-radius: 10px;
   max-width: 700px;
@@ -354,6 +371,7 @@ body.dark-mode .theme-toggle {
 }
 .form-crd p {
     text-align: center;
+    font-size: 15px;
     color: #64748b;
     margin-bottom: 30px;
 }
@@ -372,6 +390,12 @@ body.dark-mode .theme-toggle {
   border-radius: 6px;
   display: none;
   font-weight: bold;
+}
+
+@media (orientation: landscape) {
+    .form-crd h2 {
+        margin-top: 5.5rem;
+    }
 }
 
 
@@ -512,7 +536,7 @@ body.dark-mode .theme-toggle {
 }
 .faq-contact-section {
     text-align: center;
-    background: #e9f8ff;
+    background: lightblue;
     padding: 70px 20px;
     margin-bottom: 3rem;
 }
@@ -537,31 +561,23 @@ body.dark-mode .theme-toggle {
     background: #00a8dd;
 }
 
+@media (orientation: landscape) {
+    .faq .small-title {
+        margin-top: 90px;
+    }
+}
+
 
     /* Get In Touch */
 .contact-container {
-    display: flex;
-    flex-direction: column;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     max-width: 1500px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 3rem;
 }
-/* Responsive side-by-side view on wider screens */
-@media (min-width: 768px) {
-    .contact-container {
-        flex-direction: row;
-    }
-}
 .contact-info {
-    background-color: #1e293b;
-    color: #ffffff;
-    padding: 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 10px;
     justify-content: center;
     text-align: justify;
 }
@@ -569,126 +585,108 @@ body.dark-mode .theme-toggle {
     font-size: 1.8rem;
     margin-bottom: 15px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 .contact-info p {
     color: #94a3b8;
     line-height: 1.6;
+    font-size: 15px;
     margin-bottom: 30px;
 }
 .info-item {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: 0.95rem;
     line-height: 1.5;
 }
 .info-item strong {
     display: block;
-    color: #38bdf8;
+    color: mediumpurple;
 }
 .info-item img {
     width: 30px;
     margin: 3px;
 }
-.contact-form-wrapper {
-    padding: 40px;
-    flex: 1.5;
-    background: white;
-}
-.contact-form-wrapper h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    color: #1e293b;
-}
-.form-group {
-    margin-bottom: 20px;
-}
-.form-group label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #475569;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #2563eb;
-}
-.form-group textarea {
-    resize: vertical;
-}
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #2563eb;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-.submit-btn:hover {
-    background-color: #1d4ed8;
+
+@media (orientation: landscape) {
+    .contact-container h2 {
+        margin-top: 160px;
+    }
 }
 
 
 /* ABOUT */
-#about img {
+.about {
+    border-radius: 12px;
+    max-width: 1500px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.about-info {
+    padding: 10px;
+    justify-content: center;
+    text-align: justify;
+}
+.about-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 80px;
+}
+.about-info p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.about-image img {
     display: block;
     width: 100%;
-    height: 450px;
+}
+
+@media (orientation: landscape) {
+ .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+ }
+ .about h2, .about-image {
+    margin-top: 170px;
+    }
 }
 
 
 /* FOOTER */
 footer {
-  background: #050b13;
-  color: white;
-  padding: 55px 25px 20px;
+  padding: 20px 0;
 }
 .footer-content {
   max-width: 1150px;
   margin: auto;
   text-align: center;
-}
-.footer-content h3 {
-  font-size: 30px;
-  color: white;
-  margin-bottom: 15px;
-}
-.footer-content h3 span {
-  color: #00d4ff;
-}
-.footer-content p {
-  color: #aab4c0;
-  margin: 8px 0;
+  margin-top: 30px;
+  font-size: 15px;
 }
 .footer-bottom {
   border-top: 1px solid #243244;
   margin-top: 30px;
   padding-top: 20px;
 }
-.footer-bottom b {
-  color: #00d4ff;
+.footer-bottom span {
+  color: #00d;
 }
-#datetime {
-    background: linear-gradient(90deg, black, dimgrey, black);
-    color: floralwhite;
-    padding: 5px;
-    text-align: center;
+#date-time {
+    text-align: right;
     font-size: 15px;
     font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: -100px;
+}
+
+@media (orientation: landscape) {
+    .footer-content, #date-time {
+        font-size: 10px;
+    }
 }
 
     /* BACK TO TOP */
@@ -735,17 +733,9 @@ footer {
 }
 
 
-/* =========================================================
+/* ====================================
    MOBILE RESPONSIVE
-========================================================= */
-@media (orientation: landscape) {
-  .repair-container, .contact-container, .about-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);}
-    .contact-info h2 {
-        margin-top: -100px;
-    }
-}
+=================================== */
 @media ( orientation: portrait) {
   .global-logo {font-size: 17px;}
   .logo-bolt {font-size: 22px;}
@@ -762,14 +752,8 @@ footer {
     text-align: center;
     font-size: 13px;
   }
-    
-  .section {padding: 60px 18px;}
-  
-  .repair-info img {height: 220px; }
- 
-  .form-card, .contact-form-wrapper {padding: 25px 18px; }
 
-  .contact-form-wrapper h2 {font-size: 28px;}
+  .repair-info img {height: 220px; }
  
   .faq { padding: 70px 20px; }
   .faq h1 { font-size: 36px; }

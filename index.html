@@ -4,6 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <title>TAYUSTECH ENGINEERING</title>
+    
+ <!-- PWA & Mobile Settings -->
+ <meta name="description" content="TayusTech - Engineering">
+ <link rel="manifest" href="manifest.json">
+ <meta name="theme-color" content="#0d1117">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <meta name="apple-mobile-web-app-title" content="Tayus Tech">
+ <link rel="apple-touch-icon" href="tech.png"> 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link your CSS file here -->
@@ -45,9 +55,9 @@
   <a href="#repair">⚙ Schedule a Repair</a>
   <a href="#sell">🔌 Sell your Old appliances</a><br>
   <a href="#faq">❓Faq</a>
-  <a href="#getintouch">📩 Get In Touch</a>
-  <a href="refrigerator.html" class="office">🏢 Refrigerator HUB</a>
-  <a href="air-conditioner.html" class="office">🏢 AC HUB</a>
+  <a href="#getintouch">📩 Get In Touch</a><p>
+  <a href="refrigerator.html" class="office"><i class="fa-solid fa-temperature-low"></i> Fridge Vault</a>
+  <a href="air-conditioner.html" class="office"><i class="fa-solid fa-snowflake"></i> AC Vault</a>
 </nav>
  
 
@@ -121,12 +131,17 @@
         </select>
       </div>
       <div class="input-grp">
-        <label for="date">Preferred Date</label>
-        <input
-          type="date"
-          id="date"
-          required
-        >
+        <label for="datetime">Preferred Date & Time</label>
+<input 
+  type="text" 
+  id="datetime" 
+  name="datetime" 
+  placeholder="Select date and time" 
+  onfocus="(this.type='datetime-local')"
+  onblur="if(!this.value) this.type='text'"
+  required>
+
+
       </div>
       <div class="input-grp">
         <label for="address">Address</label>
@@ -295,13 +310,13 @@
     <p>Have questions or feedback? We’d love to hear from you. Fill out the form or reach us via details below or toggle the nav menu above.</p>
     
     <div class="info-item">
-      <strong>Email:</strong> Tayustechengineering2455@gmail.com
+      <strong><i class="fa-solid fa-envelope"></i> Email:</strong> Tayustechengineering2455@gmail.com
     </div>
     <div class="info-item">
-      <strong>Phone:</strong> +234 (080) 6461-0408
+      <strong><i class="fa-solid fa-phone"></i> Phone:</strong> (+234) 80 6461 0408, (+234) 80 2455 4760
     </div>
     <div class="info-item">
-  <strong>Social Media:</strong>
+  <strong><i class="fa-brands fa-whatsapp"></i> Social Media:</strong>
   <a href="http://wa.me/7083085958">
     <img src="whatsapp.jpeg"></a>
 </div>
@@ -309,47 +324,18 @@
       <strong>Address:</strong> <i>12 Ore Ofe Way, Off Olutoroti Street, Ntabo, Ijoko Sango Ota, Ogun State</i>
     </div>
   </div>
-  <div class="contact-form-wrapper">
-    <h2>Send Us a Message</h2>
-    
-  <!-- Formspree Endpoint Attached -->
-<form id="contact-form" action="https://formspree.io/f/xbglkzyk" method="POST">
-  
-  <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="John Doe" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="john@example.com" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="subject">Subject</label>
-    <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="message">Your Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-  </div>
-  
-  <button type="submit" id="submit-btn" class="btn">Send Message</button>
-</form>
-  </div>
 </div>
 
 
 <!-- About Section -->
-<section id="about" class="contact-container">
-<div class="contact-info">
+<section id="about" class="about">
+<div class="about-info">
 <h2>About TayusTech</h2>
 <p>At<strong> TayusTech company</strong>, We provide services for repairing of refrigerator and Air conditioner for a more refreshing atmosphere and guarantee a long lasting service duration.<br>
 We diagnose and troubleshoot appliances and electronics in order to identify issues such as lack of cooling, unusual noises, short-cycling, or unexpected shutdowns.</p>
 </div>
 <div class="about-image">
-  <img src="tech.png">
+  <img src="tech1.png">
 </div>
 </section> 
 
@@ -357,14 +343,13 @@ We diagnose and troubleshoot appliances and electronics in order to identify iss
 <!-- FOOTER -->
 <footer>
   <div class="footer-content" id="footer">
-    <h3>TAYUS <span>TECH</span></h3>
     <p>12, Ore Ofe Way, Ntabo, Ijoko, Sango Ota, Ogun State | Phone: +234 (70) 8303-5958</p> 
     <p>Available Daily for services: 10:00 AM</p>
     <div class="footer-bottom">
-      <p><b>2026 TAYUS TECH<sup>&COPY;</sup></b> | Quality • Power • Performance<br>All Rights Reserved.</p></p>
+      <p><b>&COPY;2026 TAYUS <span>TECH</span></b> | Quality • Power • Performance<br>All Rights Reserved.</p></p>
     </div>
   </div>
-  <p id="datetime"></p>
+  <p id="date-time"></p>
 </footer>
 
 <!-- BACK TO TOP -->

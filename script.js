@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Prevent normal form submission
     event.preventDefault();
  
-    const whatsappNumber = "+2347083085958";
+    const whatsappNumber = "2347083085958"; // Note: Removed leading '+' for cleaner wa.me URL resolution
   
     const fullName =
       document.getElementById("fullName").value.trim();
@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("phone").value.trim();
     const service =
       document.getElementById("service").value;
-    const date =
-      document.getElementById("date").value;
+    const datetimeValue =
+      document.getElementById("datetime").value;
     const address =
       document.getElementById("address").value.trim();
   
@@ -69,21 +69,32 @@ document.addEventListener("DOMContentLoaded", function() {
       fullName === "" ||
       phone === "" ||
       service === "" ||
-      date === "" ||
+      datetimeValue === "" ||
       address === ""
     ) {
       alert("Please fill in all the required fields.");
       return;
     }
   
-    const dateObject = new Date(date + "T00:00:00");
-    const formattedDate =
-      dateObject.toLocaleDateString("en-NG", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      });
+    // Parse datetime-local value directly
+    const dateObject = new Date(datetimeValue);
+
+    // Format Date & Time cleanly
+    const formattedDate = dateObject.toLocaleDateString("en-NG", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    const formattedTime = dateObject.toLocaleTimeString("en-NG", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true
+    });
+
+    const formattedDateTime = `${formattedDate} at ${formattedTime}`;
+
     // ==========================================
     // CREATE WHATSAPP MESSAGE
     // ==========================================
@@ -104,8 +115,8 @@ ${phone}
 🛠️ Service Needed:
 ${service}
 
-📅 Preferred Date:
-${formattedDate}
+📅 Preferred Date & Time:
+${formattedDateTime}
 
 📍 Service Address:
 ${address}
@@ -113,6 +124,7 @@ ${address}
 Please confirm my repair booking.
 Thank you.
 TAYUS TECH`;
+
     // ==========================================
     // CREATE WHATSAPP LINK
     // ==========================================
@@ -121,12 +133,14 @@ TAYUS TECH`;
       whatsappNumber +
       "?text=" +
       encodeURIComponent(message);
+
     // ==========================================
     // OPEN WHATSAPP
     // ==========================================
     window.location.href = whatsappURL;
   });
 });
+
 
  
 // Trade-In / Sell Valuation Algorithm
@@ -302,6 +316,6 @@ themeToggle.addEventListener("click", function() {
 /*Display DateTime*/
 function displayDateTime() {
     var now = new Date();
-    document.getElementById("datetime").innerHTML = now.toLocaleString();}
+    document.getElementById("date-time").innerHTML = now.toLocaleString();}
 displayDateTime();
 setInterval(displayDateTime, 1000);
